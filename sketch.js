@@ -14,10 +14,10 @@ function preload()
 function setup() {
 	createCanvas(600,600);
 
-	snake1 = new Snake(300,300,25,25);
-
 	engine = Engine.create();
 	world = engine.world;
+
+	snake1 = new Snake(300,300,25,25);
 
 	//packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:1.5, isStatic:false});
 	//World.add(world, packageBody);
@@ -35,15 +35,17 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background(0);
-  engine.update(Engine);
+  Engine.update(engine);
+
+  snake1.display();
   
   drawSprites();
  
 }
 
-function move(){
-	if(keyCode === 32){
-		snake1.velocityX = 5;
+function keyPressed(){
+	if(keyCode == 38){
+		snake1.y = snake1.y - 20;
 	}
 }
 
