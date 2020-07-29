@@ -44,8 +44,8 @@ function draw() {
 }
 
 function keyPressed(){
-	if(keyCode == 38){
-		snake1.y = snake1.y - 20;
+	if(keyCode === UP_ARROW){
+		snake1.velocityY = -1;
 	}
 }
 
